@@ -16,11 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from emails.views import email_entry_get_view
+from accounts.views import (
+    login_view, 
+    logout_view,
+    register_view
+)
 
+from emails.views import (
+    email_entry_get_view, 
+    email_entry_create_view
+)
 
 # path(<path_name>, <view_function>)
 urlpatterns = [
+    path('', email_entry_create_view),
     path('email/<int:id>/', email_entry_get_view),
+    path('login/', login_view),
+    path('logout/', logout_view),
+    path('register/', register_view),
     path('admin/', admin.site.urls),
 ]
+
+# 2:47:21

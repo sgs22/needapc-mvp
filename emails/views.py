@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 
-from.models import EmailEntry
+from .forms import EmailEntryForm
+from .models import EmailEntry
+
 
 # Create your views here.
 # Model -> View -> Template
@@ -15,15 +17,24 @@ def email_entry_get_view(request, id=None, *args, **kwargs):
     except EmailEntry.DoesNotExist:
         raise Http404
 
-    return HttpResponse(f"<h1>Hello {obj.email}</h1>")
+    return render(request, "get.html", {"object":obj})
 
 # def email_entry_list_view():
 
 #     return
 
-# def email_entry_create_view():
+def email_entry_create_view(request, *args, **kwargs):
+    print(request.user, request.user.is_authenticated) # is_authenticated()
+    form = EmailEntryForm(request.POST or None)
+    if form.is_valid():
+        # obj = form.save(commit=False) #Model Instance
+        # obj.save()
+        # new_id = obj.id
 
-#     return
+        form.save()
+        form = EmailEntryForm()
+    
+    return render(request, "form.html", {"form":form})
 # def email_entry_update_view():
 
 #     return

@@ -57,7 +57,7 @@ ROOT_URLCONF = 'needapc_mvp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'], #BASE_DIR / 'templates'
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Local static files ()
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/home/sgs/Dev/needapc-mvp/static',
+    ]
+
+#CDN - Content Delivery Network - "SERVING" dir
+STATIC_ROOT = "/home/sgs/Dev/needapc-mvp/my_CDN"
