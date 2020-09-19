@@ -7,6 +7,11 @@ class EmailEntryForm(forms.ModelForm):
         model = EmailEntry
         fields = ['email']
 
+class EmailEntryUpdateForm(forms.ModelForm):
+    class Meta:
+        model = EmailEntry
+        fields = ['name', 'email']
+
     def clean_email(self): #clean_<field_name>
         email = self.cleaned_data.get("email")
         # if email.endswith("gmail.com"):

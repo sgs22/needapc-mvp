@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<img src="{% static 'img/laptop.jpg' %}" alt="Laptop">
+<h1>Not Working: {email}</h1>
+<h1>Working: {{ object.email }}</h1>
+
+{% endblock %}
