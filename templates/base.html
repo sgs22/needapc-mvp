@@ -1,16 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% include 'base/css.html' %}
-    <title>{% block head_title %}mvp-needapc{% endblock head_title %}</title>
-  </head>
-  <body class="bg-light text-dark">
-    {% block content %}{% endblock content %}
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Samuel Smith">
 
-    {% include 'base/js.html' %}
-  </body>
+  {% include 'base/css.html' %}
+    
+
+  <title>{% block head_title %}mvp-needapc{% endblock head_title %}</title>
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">needapc-mvp</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="#">Landing</a>
+          <a class="nav-link" href="#">Coming Soon!</a>
+          <!-- <a class="nav-link" href="#">Contact</a> -->
+        </nav>
+      </div>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Landing page for needapc</a>, by <a
+            href="https://twitter.com/@Smithssam" target="_blank">@smithssam</a>.</p>
+      </div>
+    </footer>
+  </div>
+  {% include 'base/js.html' %}
+</body>
 </html>
