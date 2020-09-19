@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 
@@ -8,6 +9,7 @@ from .models import EmailEntry
 # Create your views here.
 # Model -> View -> Template
 
+@login_required(login_url="/login") # default configured in settings.py
 def email_entry_get_view(request, id=None, *args, **kwargs):
     # get a single item stored in the db
     # print(args, kwargs)
