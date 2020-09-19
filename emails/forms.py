@@ -3,14 +3,17 @@ from django import forms
 from .models import EmailEntry
 
 class EmailEntryForm(forms.ModelForm):
+    email = forms.EmailField(label="",
+        widget=forms.EmailInput(
+            attrs={
+                "placeholder": "Your email",
+                "class": "form-control"
+            }
+        )
+    )
     class Meta:
         model = EmailEntry
         fields = ['email']
-
-class EmailEntryUpdateForm(forms.ModelForm):
-    class Meta:
-        model = EmailEntry
-        fields = ['name', 'email']
 
     def clean_email(self): #clean_<field_name>
         email = self.cleaned_data.get("email")
@@ -20,3 +23,10 @@ class EmailEntryUpdateForm(forms.ModelForm):
         if qs.exists():
             raise forms.ValidationError("Thank you, you have already registered.")
         return email
+
+class EmailEntryUpdateForm(forms.ModelForm):
+    class Meta:
+        model = EmailEntry
+        fields = ['name', 'email']
+
+    

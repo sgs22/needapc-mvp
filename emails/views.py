@@ -30,8 +30,10 @@ def email_entry_list_view(request, id=None, *args, **kwargs):
     return render(request, "emails/list.html", {"object_list": qs})
 
 def email_entry_create_view(request, *args, **kwargs):
+    context = {}
     print(request.user, request.user.is_authenticated) # is_authenticated()
     form = EmailEntryForm(request.POST or None)
+    context["form"] = form
     if form.is_valid():
         # obj = form.save(commit=False) #Model Instance
         # obj.save()
@@ -39,8 +41,10 @@ def email_entry_create_view(request, *args, **kwargs):
 
         form.save()
         form = EmailEntryForm()
+        context["added"] = True
+        context['form'] = form
     
-    return render(request, "home.html", {"form":form})
+    return render(request, "home.html", context)
 
 @staff_member_required(login_url="/login")
 def email_entry_update_view(request, id=None, *args, **kwargs):
