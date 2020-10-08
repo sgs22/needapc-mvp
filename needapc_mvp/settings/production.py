@@ -38,7 +38,7 @@ DEBUG = False
 
 MY_VAR = "this_is_a_test"
 
-ALLOWED_HOSTS =  ['herokuapp.com','needapc-mvp.herokuapp.com', 'needapc.co.uk']
+ALLOWED_HOSTS =  ['herokuapp.com','needapc-mvp.herokuapp.com', 'needapc.co.uk', 'www.needapc.co.uk']
 
 
 # Application definition
