@@ -1,0 +1,1 @@
+web: gunicorn --env DJANGO_SETTING_MODULE=needapc_mvp.settings.production needapc_mvp.wsgi:application --workers 3

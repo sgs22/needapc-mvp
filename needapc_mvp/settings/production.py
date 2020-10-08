@@ -27,14 +27,18 @@ BASE_DIR = PROJECT_PACKAGE.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yi+=u*vmi#0i@60btxn$a&zjvn+)^_-(f5blk4w%+%jtiwwvsw'
+SECRET_KEY = 'dz05+augw@n7&905z@yj&g%b&c%2sd(2g-383la=m7z^syajw2'
+
+'''
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+'''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 MY_VAR = "this_is_a_test"
 
-ALLOWED_HOSTS = [".google.cloud"]
+ALLOWED_HOSTS =  ['herokuapp.com', 'needapc.co.uk']
 
 
 # Application definition
@@ -89,6 +93,21 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
+
+CORS_REPLACE_HTTPS_REFERER      = True
+HOST_SCHEME                     = "https://"
+SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT             = True
+SESSION_COOKIE_SECURE           = True
+CSRF_COOKIE_SECURE              = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+SECURE_HSTS_SECONDS             = 1000000
+SECURE_FRAME_DENY               = True
 
 # Login URL - sets the default login page for @login auth
 LOGIN_URL = "/login"
