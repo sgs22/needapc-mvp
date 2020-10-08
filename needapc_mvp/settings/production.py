@@ -27,7 +27,7 @@ BASE_DIR = PROJECT_PACKAGE.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dz05+augw@n7&905z@yj&g%b&c%2sd(2g-383la=m7z^syajw2'
+SECRET_KEY = 'bpb#i66u1ze8@ju%15_#5w7yi7tugz_2m8oal56ynb+yax&a3k'
 
 '''
 python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
