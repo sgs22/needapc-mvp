@@ -36,9 +36,7 @@ python -c 'from django.core.management.utils import get_random_secret_key; print
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-MY_VAR = "this_is_a_test"
-
-ALLOWED_HOSTS =  ['herokuapp.com','needapc-mvp.herokuapp.com', 'needapc.co.uk', 'www.needapc.co.uk']
+ALLOWED_HOSTS =  ['herokuapp.com','needapc-mvp.herokuapp.com', 'needapc.co.uk']
 
 
 # Application definition
@@ -158,5 +156,8 @@ STATICFILES_DIRS = [
     '/home/sgs/Dev/needapc-mvp/static',
     ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 #CDN - Content Delivery Network - "SERVING" dir
-STATIC_ROOT = "/home/sgs/Dev/needapc-mvp/my_CDN"
+#STATIC_ROOT = "/home/sgs/Dev/needapc-mvp/my_CDN"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
