@@ -162,6 +162,6 @@ STATICFILES_DIRS = [
 #STATIC_ROOT = "/home/sgs/Dev/needapc-mvp/my_CDN"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
+# # Configure Django App for Heroku.
+# import django_heroku
+# django_heroku.settings(locals())
