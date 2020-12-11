@@ -3,11 +3,21 @@
 
 
 {% block content %}
+<header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">needapc-mvp</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="/">Landing</a>
+        <a class="nav-link active" href="signup/">Sign Up</a>
+        <!-- <a class="nav-link" href="#">Contact</a> -->
+      </nav>
+    </div>
+</header>
 
     <main role="main" class="inner cover">
-        <h1 class="cover-heading">needapc landing.</h1>
-        <p class="lead">Welcome to needapc sign up, enter your email
-            and we'll let you know when we're ready!</p>
+        <h1 class="cover-heading">Sign up for when we go live!</h1>
+        <p class="lead">Please enter your email below
+            and we'll let you know <br>when we're ready!</p>
         {% if added %}
             <div class='alert alert-success'>Thank you for joining, we'll be in touch!</div>
         {% endif %}

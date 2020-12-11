@@ -4,7 +4,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 
-from .forms import EmailEntryForm, EmailEntryUpdateForm
+from .forms import EmailEntryForm#, EmailEntryUpdateForm
 from .models import EmailEntry
 
 
@@ -44,7 +44,7 @@ def email_entry_create_view(request, *args, **kwargs):
         context["added"] = True
         context['form'] = form
     
-    return render(request, "home.html", context)
+    return render(request, "signup.html", context)
 
 @staff_member_required(login_url="/login")
 def email_entry_update_view(request, id=None, *args, **kwargs):
@@ -68,3 +68,6 @@ def email_entry_destroy_view(request, id=None, *args, **kwargs):
         obj.delete()
         return redirect("/")
     return render(request, "emails/destroy.html", {"object":obj})
+
+# def index(request, id=None, *args, **kwargs):
+#     return render(request, "home.html", {"object":obj})

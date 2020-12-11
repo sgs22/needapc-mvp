@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">needapc-mvp</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active" href="/">Landing</a>
+        <a class="nav-link" href="signup/">Sign Up</a>
+        <!-- <a class="nav-link" href="#">Contact</a> -->
+      </nav>
+    </div>
+</header>
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Save yourself the effort.</h1>
+        <h5 class="cover-heading">These are the best you can get, just in time for christmas.</h5>
+        <div class="row pt-3">
+            {% for object in featured_list %}
+              <div class="col-md text-center pt-3 pb-3">
+                <div class="card cardfeatured">
+                    <a class="card-block stretched-link text-decoration-none" href="{{object.url}}"></a>
+                        <div class="card-img-overlay overlayfeatured">
+                            <h5 class="card-title">{{ object.title }}</h5>
+                            <p class="card-text">£{{ object.price }}</p>
+                        </div>
+                        {% if object.image %}
+                        <img src="{{ object.image.url }}" class="imgfeatured card-img-top" alt="{{ object.title }}">
+                        {% else %}
+                        <img src="{% static '/img/placeholder.jpg' %}" class="imgfeatured card-img-top" alt="placeholder image">
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="card-text" style="color: black;">{{ object.content }}</p>
+                            <a href="" class="btn btn-warning btnfeatured">More details on Amazon</a>
+                        </div>
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+    </main>
+
+{% endblock %}
+
+<!-- <div class="container">
+    <div class="col-md-6 mx-auto">
+        <img src="https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                class="img-fluid"/>
+        <h1>needapc landing.</h1>
+        <p>Welcome to needapc sign up, enter your email
+             and we'll let you know when we're ready!</p>
+        {% if added %}
+            <div class='alert alert-success'>Thank you for joining, we'll be in touch!</div>
+        {% endif %}
+        {% include "form.html" %}
+    </div>
+</div> -->

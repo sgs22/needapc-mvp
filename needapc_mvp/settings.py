@@ -25,8 +25,6 @@ SECRET_KEY = 'yi+=u*vmi#0i@60btxn$a&zjvn+)^_-(f5blk4w%+%jtiwwvsw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-MY_VAR = "this_is_a_test"
-
 ALLOWED_HOSTS = []
 
 
@@ -40,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'emails',
+    'accounts'
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,135 @@
+/**
+    NAVBAR
+*/
+.navbarmain {
+    background-color: black!important;
+}
+
+
+.btnsignup {
+    border-radius: calc(0.8rem - 1px);
+    background-color: white;
+    color: black;
+    font-weight: 600;
+}
+
+.btnsignup:hover {
+    background-color:rgba(255,255,255,.75);
+}
+
+.btnlogin {
+    border-radius: calc(0.8rem - 1px);
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+.btnlogin:hover {
+    background-color:rgba(255,255,255,.25);
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-logo {
+    font-size: x-large;
+    color: white;
+    padding-right: 0.5rem;
+}
+
+.navbar-logo:hover {
+    font-size: x-large;
+    color: white;
+}
+
+.navbar-brand {
+    font-size: x-large;
+    color: white;
+}
+
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+    font-size: x-large;
+    color: rgba(255,255,255,.75)
+}
+
+/**
+    INDEX PAGE CONTENT
+*/
+
+.jumbotronindex {
+    margin-bottom: 0px;
+    padding: 12rem 2rem;
+}
+
+.btnquiz {
+    border-radius: calc(0.8rem - 1px);
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+.btnquiz:hover {
+    background-color:rgb(53, 53, 53);
+    color: white;
+}
+
+.h1index {
+    font-size: 72px;
+    font-weight: 600;
+}
+
+.pindex {
+    font-size: 22px;
+}
+
+/**
+    FEATURED PAGE CONTENT
+*/
+.cardfeatured {
+    box-shadow: 0 16px 48px #181818!important;
+    border-radius: calc(1.5rem - 1px);
+    border: none;
+}
+
+.imgfeatured {
+    border-top-right-radius: calc(1.5rem - 1px);
+    border-top-left-radius: calc(1.5rem - 1px);
+}
+
+.overlayfeatured {
+    color: black;
+    text-align: left;
+}
+
+.btnfeatured {
+    border-radius: calc(0.8rem - 1px);
+}
+
+.jumbotronfeatured {
+    margin-bottom: 0px;
+    padding: 12rem 2rem;
+    background-color: white;
+}
+
+.body {
+    text-shadow: none!important;
+}
+
+/**
+    FOOTER CONTENT
+*/
+.footer-logo {
+    font-size: xx-large;
+    color: black
+}
+
+
+/**
+    Layout styling
+*/
+.padding-y {
+    padding: 10rem 0;
+}

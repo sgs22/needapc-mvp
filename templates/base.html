@@ -9,6 +9,12 @@
   <meta name="author" content="Samuel Smith">
 
   {% include 'base/css.html' %}
+  
+  
+  {% load static %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/cover.css' %}">
     
 
   <title>{% block head_title %}mvp-needapc{% endblock head_title %}</title>
@@ -16,16 +22,7 @@
 
 <body class="text-center">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">needapc-mvp</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">Landing</a>
-          <a class="nav-link" href="#">Coming Soon!</a>
-          <!-- <a class="nav-link" href="#">Contact</a> -->
-        </nav>
-      </div>
-    </header>
+    
 
     {% block content %}
     {% endblock content %}
@@ -33,7 +30,7 @@
     <footer class="mastfoot mt-auto">
       <div class="inner">
         <p>Landing page for needapc</a>, by <a
-            href="https://twitter.com/@Smithssam" target="_blank">@smithssam</a>.</p>
+            href="https://twitter.com/@Smithssam" target="_blank">@smithssam</a>. <br> Please note we get a small kickback whenever you purchase using our links.</p>
       </div>
     </footer>
   </div>

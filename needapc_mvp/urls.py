@@ -30,9 +30,12 @@ from emails.views import (
     email_entry_update_view
 )
 
+from featured.views import featured_view
+
 # path(<path_name>, <view_function>)
 urlpatterns = [
-    path('', email_entry_create_view),
+    path('', featured_view),
+    path('signup/', email_entry_create_view),
     path('email/<int:id>/', email_entry_get_view),
     path('email/<int:id>/destroy/', email_entry_destroy_view),
     path('email/<int:id>/update/', email_entry_update_view),
@@ -40,7 +43,7 @@ urlpatterns = [
     path('login/', login_view),
     path('logout/', logout_view),
     path('register/', register_view),
-    path('admin/', admin.site.urls),
+    path('apanel/', admin.site.urls),
 ]
 
 # 2:47:21
