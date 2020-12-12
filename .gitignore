@@ -144,6 +144,14 @@ cython_debug/
 # Static and Media root
 media_cdn/
 static/
+staticfiles/
+my_CDN
+
+scripts/
+db.sqlite3
 
 # Vscode workspace
 mvp-needapc.code-workspace
+
+
+

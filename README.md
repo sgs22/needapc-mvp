@@ -1,3 +1,3 @@
 # needapc-mvp
 
-A python web application using the Django framework
+A simple minimum viable product for email sign up for needapc and viewing of current deals found on amazon
