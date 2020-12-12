@@ -16,11 +16,11 @@
 </header>
 
     <main role="main" class="inner cover">
-        <h1 class="cover-heading">Save yourself the effort.</h1>
-        <h5 class="cover-heading">These are the best you can get, just in time for christmas.</h5>
+        <h1 class="cover-heading" style="padding-top: 100px;">Save yourself the effort.</h1>
+        <h5 class="cover-heading" style="padding-bottom: 50px;">What we think are great deals, just in time for christmas.</h5>
         <div class="row pt-3">
             {% for object in featured_list %}
-              <div class="col-md text-center pt-3 pb-3">
+              <div class="col-md-12 text-center pt-3 pb-3">
                 <div class="card cardfeatured">
                     <a class="card-block stretched-link text-decoration-none" href="{{object.url}}"></a>
                         <div class="card-img-overlay overlayfeatured">
@@ -28,13 +28,13 @@
                             <p class="card-text">£{{ object.price }}</p>
                         </div>
                         {% if object.image %}
-                        <img src="{{ object.image.url }}" class="imgfeatured card-img-top" alt="{{ object.title }}">
+                        <img src="{{ object.image.url }}" class="imgfeatured card-img-top" alt="{{ object.title }}" style="padding-top: 75px;">
                         {% else %}
                         <img src="{% static '/img/placeholder.jpg' %}" class="imgfeatured card-img-top" alt="placeholder image">
                         {% endif %}
                         <div class="card-body">
                             <p class="card-text" style="color: black;">{{ object.content }}</p>
-                            <a href="" class="btn btn-warning btnfeatured">More details on Amazon</a>
+                            <a href="" class="btn btn-warning btnfeatured">View on Amazon</a>
                         </div>
                 </div>
               </div>
