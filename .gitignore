@@ -148,7 +148,7 @@ staticfiles/
 my_CDN
 
 scripts/
-db.sqlite3
+# db.sqlite3
 
 # Vscode workspace
 mvp-needapc.code-workspace
