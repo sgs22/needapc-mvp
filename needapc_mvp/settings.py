@@ -10,9 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+print("Developer Settings")
+import os
 from pathlib import Path
 
+# Utilites
+# Default base_directory, for use when adding another folder dir for a settings
+PROJECT_PACKAGE = Path(__file__).resolve().parent.parent
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Full path to the root
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -38,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'emails',
-    'accounts'
+    'accounts',
+    'featured'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +90,16 @@ DATABASES = {
     }
 }
 
+CORS_REPLACE_HTTPS_REFERER      = False
+HOST_SCHEME                     = "http://"
+SECURE_PROXY_SSL_HEADER         = None
+SECURE_SSL_REDIRECT             = False
+SESSION_COOKIE_SECURE           = False
+CSRF_COOKIE_SECURE              = False
+SECURE_HSTS_SECONDS             = None
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
+SECURE_FRAME_DENY               = False
+
 # Login URL - sets the default login page for @login auth
 LOGIN_URL = "/login"
 
@@ -110,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'GMT'
 
 USE_I18N = True
 
@@ -132,3 +150,6 @@ STATICFILES_DIRS = [
 
 #CDN - Content Delivery Network - "SERVING" dir
 STATIC_ROOT = "/home/sgs/Dev/needapc-mvp/my_CDN"
+
+MEDIA_URL= '/media/'
+MEDIA_ROOT = BASE_DIR / "media_cdn"
