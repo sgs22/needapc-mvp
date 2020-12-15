@@ -24,6 +24,12 @@ __BASE_DIR__
 BASE_DIR = settings.BASE_DIR
 ```
 
+
+### change default settings module
+```
+export DJANGO_SETTINGS_MODULE=needapc_mvp.settings
+```
+
 ### Import of a Model
 
 `from <appname>.models import <KlassName>`
