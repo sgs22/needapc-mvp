@@ -9,7 +9,7 @@ verify_ssl = true
 gunicorn = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
-Django = "==3.1.1"
+django = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.11"
